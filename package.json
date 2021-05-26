@@ -1,0 +1,22 @@
+{
+  "name": "chatbot-whatsapp",
+  "version": "1.0.0",
+  "description": "Sistema de solicitação para whatsapp",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/quinho981/sistema-chatbot-whatsapp.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/quinho981/sistema-chatbot-whatsapp/issues"
+  },
+  "homepage": "https://github.com/quinho981/sistema-chatbot-whatsapp#readme",
+  "dependencies": {
+    "venom-bot": "^3.0.17"
+  }
+}

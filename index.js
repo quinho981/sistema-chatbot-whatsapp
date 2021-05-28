@@ -10,18 +10,21 @@ venom
     });
 
 function start(client) {
-    const cardapio = '[--- CARDÁPIO DO DIA ---]:'+'\n'+
-    '----------------------'+'\n'+
-    '1 - BATATA FRITA'+'\n'+
-    '2 - STROGONOFF'+'\n'+
-    '3 - PIRÃO';
+    // const cardapio = '[--- CARDÁPIO DO DIA ---]:'+'\n'+
+    // '----------------------'+'\n'+
+    // '1 - BATATA FRITA'+'\n'+
+    // '2 - STROGONOFF'+'\n'+
+    // '3 - PIRÃO';
+    // let toUser;
+    const assistente = "Olá, sou o assistente virtual da BS";
 
     client.onMessage((message) => {
-        if (message.body === 'Cardápio' && message.isGroupMsg === false) {
+        if (message.body != null && message.body != 2 && message.isGroupMsg === false) {
             client
-                .sendText(message.from, cardapio)
+                .sendText(message.from, assistente)
                 .then((result) => {
-                    console.log('Result: ', result); //return object success
+                    toUser = result.to.remote._serialized;
+                    console.log('Result: ',  result.to.remote.user); //return object success
                 })
                 .catch((erro) => {
                     console.error('Error when sending: ', erro); //return object error
@@ -31,8 +34,8 @@ function start(client) {
         if (message.body === '2' && message.isGroupMsg === false) {
             client
                 .sendImage(
-                    '557192266760@c.us',
-                    'https://img.ibxk.com.br/2020/01/30/30021141299110.jpg?w=1120&h=420&mode=crop&scale=both',
+                    toUser,
+                    'https://thumbs.jusbr.com/filters:format(webp)/imgs.jusbr.com/publications/artigos/images/capturar1452194585.JPG',
                 )
                 .then((result) => {
                     console.log('Result: ', result); //return object success
